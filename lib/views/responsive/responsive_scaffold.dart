@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/common/horizontal_divider.dart';
+import 'package:portfolio/views/responsive/responsive_action.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ResponsiveScaffold extends StatelessWidget {
-  final List<Widget> actions;
+  final List<ResponsiveAction> actions;
   final Widget body;
   final Widget? title;
 
