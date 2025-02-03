@@ -12,6 +12,7 @@ dependencies:
   easy_localization: ^3.0.7+1
   path: ^1.9.0
   responsive_builder: ^0.7.1
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
