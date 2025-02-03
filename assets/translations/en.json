@@ -1,4 +1,9 @@
 {
+  "actions_about": "About",
+  "actions_certificates": "Certificates",
+  "actions_history": "History",
+  "actions_projects": "Projects",
+  "actions_skills": "Skills",
   "hello_world": "Hello World!",
   "portfolio": "Portfolio"
 }
