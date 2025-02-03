@@ -14,6 +14,9 @@ class App extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          scrolledUnderElevation: 0,
+        ),
         colorScheme: const ColorScheme.light(
           primary: Colours.ultramarineBlue,
         ),
