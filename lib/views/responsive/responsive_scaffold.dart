@@ -3,12 +3,14 @@ import 'package:portfolio/views/common/horizontal_divider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ResponsiveScaffold extends StatelessWidget {
+  final List<Widget> actions;
   final Widget body;
   final Widget? title;
 
   const ResponsiveScaffold({
     super.key,
     required this.body,
+    this.actions = const [],
     this.title,
   });
 
@@ -18,6 +20,9 @@ class ResponsiveScaffold extends StatelessWidget {
       builder: (context, sizingInformation) {
         return Scaffold(
           appBar: AppBar(
+            actions: !sizingInformation.isMobile || !actions.isNotEmpty
+                ? [...actions, const SizedBox(width: 10)]
+                : null,
             bottom: const PreferredSize(
               preferredSize: Size.fromHeight(1),
               child: HorizontalDivider(),
@@ -32,6 +37,13 @@ class ResponsiveScaffold extends StatelessWidget {
               child: body,
             ),
           ),
+          drawer: sizingInformation.isMobile && actions.isNotEmpty
+              ? Drawer(
+                  child: ListView(
+                    children: actions,
+                  ),
+                )
+              : null,
         );
       },
     );
