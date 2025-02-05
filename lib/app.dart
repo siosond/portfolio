@@ -20,6 +20,9 @@ class App extends StatelessWidget {
         colorScheme: const ColorScheme.light(
           primary: Colours.ultramarineBlue,
         ),
+        scrollbarTheme: ScrollbarThemeData(
+          thumbVisibility: WidgetStateProperty.all(true),
+        ),
       ),
     );
   }
