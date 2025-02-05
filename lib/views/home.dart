@@ -2,9 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/enums/sections.dart';
 import 'package:portfolio/views/about/about_section.dart';
+import 'package:portfolio/views/common/section_header.dart';
 import 'package:portfolio/views/common/start_aligned_column.dart';
 import 'package:portfolio/views/responsive/responsive_action.dart';
 import 'package:portfolio/views/responsive/responsive_scaffold.dart';
+import 'package:portfolio/views/skills/skills_section.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -20,12 +22,14 @@ class Home extends StatelessWidget {
           );
         },
       ).toList(),
-      body: const StartAlignedColumn(
+      body: StartAlignedColumn(
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(vertical: 96.0),
             child: AboutSection(),
           ),
+          SectionHeader(context.tr('my_skills')),
+          const SkillsSection(),
         ],
       ),
     );
