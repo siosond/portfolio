@@ -5,6 +5,7 @@ import 'package:portfolio/views/about/about_section.dart';
 import 'package:portfolio/views/common/section_header.dart';
 import 'package:portfolio/views/common/start_aligned_column.dart';
 import 'package:portfolio/views/history/history_section.dart';
+import 'package:portfolio/views/projects/projects_section.dart';
 import 'package:portfolio/views/responsive/responsive_action.dart';
 import 'package:portfolio/views/responsive/responsive_scaffold.dart';
 import 'package:portfolio/views/skills/skills_section.dart';
@@ -32,7 +33,9 @@ class Home extends StatelessWidget {
           SectionHeader(context.tr('my_skills')),
           const SkillsSection(),
           SectionHeader(context.tr('actions_history')),
-          const HistorySection()
+          const HistorySection(),
+          SectionHeader(context.tr('my_projects')),
+          const ProjectsSection(),
         ],
       ),
     );
