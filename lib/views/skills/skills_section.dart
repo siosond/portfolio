@@ -26,7 +26,8 @@ class SkillsSection extends StatelessWidget {
               (skill) {
                 return SkillsItem(
                   assetPath: Logos.values.byName(skill.name).getAsset(),
-                  skillName: context.tr('skills_${Casing.snakeCase(skill.name)}'),
+                  skillName:
+                      context.tr('skills_${Casing.snakeCase(skill.name)}'),
                 );
               },
             ).toList(),

@@ -7,7 +7,7 @@ class SectionHeader extends StatelessWidget {
   const SectionHeader(
     this.title, {
     super.key,
-    this.padding = const EdgeInsets.symmetric(vertical: 8.0),
+    this.padding = const EdgeInsets.only(bottom: 8.0, top: 32.0),
   });
 
   @override
