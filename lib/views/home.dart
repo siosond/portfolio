@@ -15,6 +15,16 @@ import 'package:portfolio/views/skills/skills_section.dart';
 class Home extends StatelessWidget {
   const Home({super.key});
 
+  void _scrollToWidget(GlobalKey globalKey) {
+    if (globalKey.currentContext != null) {
+      Scrollable.ensureVisible(
+        globalKey.currentContext!,
+        curve: Curves.easeInOut,
+        duration: const Duration(milliseconds: 500),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveScaffold(
@@ -23,22 +33,36 @@ class Home extends StatelessWidget {
         (section) {
           return ResponsiveAction(
             child: Text(context.tr('actions_${section.name}')),
+            onPressed: () => _scrollToWidget(section.globalKey),
           );
         },
       ).toList(),
       body: StartAlignedColumn(
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 96.0),
-            child: AboutSection(),
+          Padding(
+            key: Sections.about.globalKey,
+            padding: const EdgeInsets.symmetric(vertical: 96.0),
+            child: const AboutSection(),
           ),
-          SectionHeader(context.tr('my_skills')),
+          SectionHeader(
+            context.tr('my_skills'),
+            key: Sections.skills.globalKey,
+          ),
           const SkillsSection(),
-          SectionHeader(context.tr('actions_history')),
+          SectionHeader(
+            context.tr('actions_history'),
+            key: Sections.history.globalKey,
+          ),
           const HistorySection(),
-          SectionHeader(context.tr('my_projects')),
+          SectionHeader(
+            context.tr('my_projects'),
+            key: Sections.projects.globalKey,
+          ),
           const ProjectsSection(),
-          SectionHeader(context.tr('my_certificates')),
+          SectionHeader(
+            context.tr('my_certificates'),
+            key: Sections.certificates.globalKey,
+          ),
           const CertificatesSection(),
         ],
       ),
