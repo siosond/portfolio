@@ -18,7 +18,8 @@ enum Logos {
   kotlin,
   laravel,
   linkedin,
-  php;
+  php,
+  udemy;
 
   String getAsset() {
     return join(

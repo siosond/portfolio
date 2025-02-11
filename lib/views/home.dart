@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/certificates/certificates_section.dart';
 import 'package:portfolio/enums/sections.dart';
 import 'package:portfolio/views/about/about_section.dart';
 import 'package:portfolio/views/common/section_header.dart';
@@ -36,6 +37,8 @@ class Home extends StatelessWidget {
           const HistorySection(),
           SectionHeader(context.tr('my_projects')),
           const ProjectsSection(),
+          SectionHeader(context.tr('my_certificates')),
+          const CertificatesSection(),
         ],
       ),
     );
