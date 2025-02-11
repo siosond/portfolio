@@ -6,12 +6,14 @@ import 'package:responsive_builder/responsive_builder.dart';
 class ResponsiveScaffold extends StatelessWidget {
   final List<ResponsiveAction> actions;
   final Widget body;
+  final Widget? bottomNavigationBar;
   final Widget? title;
 
   const ResponsiveScaffold({
     super.key,
     required this.body,
     this.actions = const [],
+    this.bottomNavigationBar,
     this.title,
   });
 
@@ -38,6 +40,7 @@ class ResponsiveScaffold extends StatelessWidget {
               child: body,
             ),
           ),
+          bottomNavigationBar: bottomNavigationBar,
           drawer: sizingInformation.isMobile && actions.isNotEmpty
               ? Drawer(
                   child: ListView(

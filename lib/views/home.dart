@@ -5,6 +5,7 @@ import 'package:portfolio/enums/sections.dart';
 import 'package:portfolio/views/about/about_section.dart';
 import 'package:portfolio/views/common/section_header.dart';
 import 'package:portfolio/views/common/start_aligned_column.dart';
+import 'package:portfolio/views/credits/credits_footer.dart';
 import 'package:portfolio/views/history/history_section.dart';
 import 'package:portfolio/views/projects/projects_section.dart';
 import 'package:portfolio/views/responsive/responsive_action.dart';
@@ -41,6 +42,7 @@ class Home extends StatelessWidget {
           const CertificatesSection(),
         ],
       ),
+      bottomNavigationBar: const CreditsFooter(),
     );
   }
 }
