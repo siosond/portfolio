@@ -1,13 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 
 enum Assets {
+  downloads,
   logos,
   projects,
   translations;
 
-  static const _basePath = 'assets';
+  static const basePath = 'assets';
 
   String getPath() {
-    return join(_basePath, name);
+    return join(basePath, name);
   }
 }
