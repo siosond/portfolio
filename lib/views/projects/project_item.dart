@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/enums/types/placement_type.dart';
-import 'package:portfolio/views/common/label_text.dart';
 import 'package:portfolio/views/common/segmented_content.dart';
 import 'package:portfolio/views/common/styled_text.dart';
 import 'package:url_launcher/url_launcher_string.dart';
