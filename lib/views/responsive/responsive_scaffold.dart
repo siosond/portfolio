@@ -19,37 +19,39 @@ class ResponsiveScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        return Scaffold(
-          appBar: AppBar(
-            actions: !sizingInformation.isMobile || !actions.isNotEmpty
-                ? [...actions, const SizedBox(width: 10)]
-                : null,
-            bottom: const PreferredSize(
-              preferredSize: Size.fromHeight(1),
-              child: HorizontalDivider(),
-            ),
-            title: title,
-          ),
-          body: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: sizingInformation.isMobile ? 16.0 : 64.0,
+    return SelectionArea(
+      child: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          return Scaffold(
+            appBar: AppBar(
+              actions: !sizingInformation.isMobile || !actions.isNotEmpty
+                  ? [...actions, const SizedBox(width: 10)]
+                  : null,
+              bottom: const PreferredSize(
+                preferredSize: Size.fromHeight(1),
+                child: HorizontalDivider(),
               ),
-              child: body,
+              title: title,
             ),
-          ),
-          bottomNavigationBar: bottomNavigationBar,
-          drawer: sizingInformation.isMobile && actions.isNotEmpty
-              ? Drawer(
-                  child: ListView(
-                    children: actions,
-                  ),
-                )
-              : null,
-        );
-      },
+            body: SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: sizingInformation.isMobile ? 16.0 : 64.0,
+                ),
+                child: body,
+              ),
+            ),
+            bottomNavigationBar: bottomNavigationBar,
+            drawer: sizingInformation.isMobile && actions.isNotEmpty
+                ? Drawer(
+                    child: ListView(
+                      children: actions,
+                    ),
+                  )
+                : null,
+          );
+        },
+      ),
     );
   }
 }
