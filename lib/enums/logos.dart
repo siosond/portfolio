@@ -23,8 +23,8 @@ enum Logos {
 
   String getAsset() {
     return join(
-      Assets.logos.name,
-      '${Casing.kebabCase(name)}.svg',
+      Assets.logos.getPath(),
+      '${Casing.kebabCase(name)}.svg'
     );
   }
 }
