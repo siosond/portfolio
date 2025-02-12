@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/certificates/certificates_section.dart';
 import 'package:portfolio/enums/sections.dart';
 import 'package:portfolio/views/about/about_section.dart';
+import 'package:portfolio/views/certificates/certificates_section.dart';
 import 'package:portfolio/views/common/section_header.dart';
 import 'package:portfolio/views/common/start_aligned_column.dart';
 import 'package:portfolio/views/credits/credits_footer.dart';
