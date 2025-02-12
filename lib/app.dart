@@ -13,6 +13,7 @@ class App extends StatelessWidget {
       locale: context.locale,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
+      title: 'Daniel Sioson | Mobile and Web Developer',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           scrolledUnderElevation: 0,
