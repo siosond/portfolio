@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/common/horizontal_divider.dart';
+import 'package:portfolio/views/common/label_text.dart';
 import 'package:portfolio/views/common/styled_text.dart';
 import 'package:portfolio/views/credits/credits_dialog.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class CreditsFooter extends StatelessWidget {
   const CreditsFooter({super.key});
@@ -23,9 +25,18 @@ class CreditsFooter extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                StyledText(
-                  context.tr('credits_trademark_disclaimer'),
-                  textAlign: TextAlign.center,
+                ResponsiveBuilder(
+                  builder: (context, sizingInformation) {
+                    return sizingInformation.isMobile
+                        ? LabelText(
+                            context.tr('credits_trademark_disclaimer'),
+                            textAlign: TextAlign.center,
+                          )
+                        : StyledText(
+                            context.tr('credits_trademark_disclaimer'),
+                            textAlign: TextAlign.center,
+                          );
+                  },
                 ),
                 TextButton(
                   onPressed: () => showDialog(
