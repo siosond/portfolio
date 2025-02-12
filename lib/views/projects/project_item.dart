@@ -37,7 +37,7 @@ class ProjectItem extends StatelessWidget {
           appName,
           fontWeight: FontWeight.bold,
         ),
-        subtitle: LabelText(developer),
+        subtitle: StyledText(developer),
       ),
     );
   }

@@ -4,6 +4,8 @@ class StyledText extends StatelessWidget {
   final String data;
   final Color? color;
   final FontWeight? fontWeight;
+  final TextOverflow? overflow;
+  final bool? softWrap;
   final TextAlign? textAlign;
 
   const StyledText(
@@ -11,6 +13,8 @@ class StyledText extends StatelessWidget {
     super.key,
     this.color,
     this.fontWeight,
+    this.overflow,
+    this.softWrap,
     this.textAlign,
   });
 
@@ -18,6 +22,8 @@ class StyledText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       data,
+      overflow: overflow,
+      softWrap: softWrap,
       textAlign: textAlign,
       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
             color: color,

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/license_utils.dart';
+import 'package:portfolio/views/common/styled_text.dart';
 import 'package:portfolio/views/credits/attribution_section.dart';
 
 class CreditsDialog extends StatelessWidget {
@@ -20,11 +21,17 @@ class CreditsDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () => LicenseUtils.openLicenseScreen(context),
-          child: Text(context.tr('credits_view_licenses')),
+          child: StyledText(
+            context.tr('credits_view_licenses'),
+            color: Theme.of(context).primaryColor,
+          ),
         ),
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(context.tr('close')),
+          child: StyledText(
+            context.tr('close'),
+            color: Theme.of(context).primaryColor,
+          ),
         ),
       ],
     );

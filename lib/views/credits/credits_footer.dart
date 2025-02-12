@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/common/horizontal_divider.dart';
+import 'package:portfolio/views/common/styled_text.dart';
 import 'package:portfolio/views/credits/credits_dialog.dart';
 
 class CreditsFooter extends StatelessWidget {
@@ -22,20 +23,19 @@ class CreditsFooter extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
+                StyledText(
                   context.tr('credits_trademark_disclaimer'),
                   textAlign: TextAlign.center,
                 ),
                 TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: Theme.of(context).primaryColor,
-                    padding: const EdgeInsets.all(4.0),
-                  ),
                   onPressed: () => showDialog(
                     context: context,
                     builder: (context) => const CreditsDialog(),
                   ),
-                  child: Text(context.tr('credits')),
+                  child: StyledText(
+                    context.tr('credits'),
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
               ],
             ),

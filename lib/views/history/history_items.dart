@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/common/start_aligned_column.dart';
+import 'package:portfolio/views/common/styled_text.dart';
 
 class HistoryItems extends StatelessWidget {
   final List<String> items;
@@ -20,7 +21,7 @@ class HistoryItems extends StatelessWidget {
                 child: Icon(Icons.circle, size: 8.0),
               ),
               Expanded(
-                child: Text(
+                child: StyledText(
                   element,
                   softWrap: true,
                   overflow: TextOverflow.visible,

@@ -5,6 +5,7 @@ import 'package:portfolio/views/about/about_section.dart';
 import 'package:portfolio/views/certificates/certificates_section.dart';
 import 'package:portfolio/views/common/section_header.dart';
 import 'package:portfolio/views/common/start_aligned_column.dart';
+import 'package:portfolio/views/common/styled_text.dart';
 import 'package:portfolio/views/credits/credits_footer.dart';
 import 'package:portfolio/views/history/history_section.dart';
 import 'package:portfolio/views/projects/projects_section.dart';
@@ -32,7 +33,7 @@ class Home extends StatelessWidget {
       actions: Sections.values.map(
         (section) {
           return ResponsiveAction(
-            child: Text(context.tr('actions_${section.name}')),
+            child: StyledText(context.tr('actions_${section.name}')),
             onPressed: () => _scrollToWidget(section.globalKey),
           );
         },

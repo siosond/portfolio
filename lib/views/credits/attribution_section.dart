@@ -6,6 +6,7 @@ import 'package:portfolio/enums/credits/package_attributions.dart';
 import 'package:portfolio/enums/projects.dart';
 import 'package:portfolio/enums/types/attribution_type.dart';
 import 'package:portfolio/views/common/start_aligned_column.dart';
+import 'package:portfolio/views/common/styled_text.dart';
 import 'package:portfolio/views/credits/attribution_text.dart';
 
 class AttributionSection extends StatelessWidget {
@@ -16,11 +17,9 @@ class AttributionSection extends StatelessWidget {
     return StartAlignedColumn(
       spacing: 8.0,
       children: [
-        Text(
+        StyledText(
           context.tr('credits_sdk_and_packages'),
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          fontWeight: FontWeight.bold,
         ),
         StartAlignedColumn(
           children: [
@@ -48,11 +47,9 @@ class AttributionSection extends StatelessWidget {
             ),
           ],
         ),
-        Text(
+        StyledText(
           context.tr('credits_attributions_app_icon'),
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          fontWeight: FontWeight.bold,
         ),
         StartAlignedColumn(
           children: Projects.values.map(
@@ -66,11 +63,9 @@ class AttributionSection extends StatelessWidget {
             },
           ).toList(),
         ),
-        Text(
+        StyledText(
           context.tr('credits_attributions_logo'),
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          fontWeight: FontWeight.bold,
         ),
         StartAlignedColumn(
           children: LogoAttributions.values.map(
