@@ -18,18 +18,25 @@ class SkillsItem extends StatelessWidget {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {
         return SizedBox(
-          width: sizingInformation.isMobile ? null : 225,
+          height: 100,
+          width: sizingInformation.isMobile
+              ? sizingInformation.screenSize.width / 2.2
+              : 120,
           child: Card(
             elevation: 2,
-            child: ListTile(
-              leading: SvgPicture.asset(
-                assetPath,
-                width: 24,
-              ),
-              title: StyledText(
-                skillName,
-                textAlign: TextAlign.start,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  assetPath,
+                  width: 32,
+                ),
+                StyledText(
+                  skillName,
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         );
