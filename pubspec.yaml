@@ -1,7 +1,7 @@
-name: portfolio
-description: "A new Flutter project."
+name: Portfolio
+description: "Daniel Sioson is an experienced mobile and web developer specializing in Android (Java/Kotlin), Flutter, and web technologies."
 publish_to: 'none'
-version: 0.1.0
+version: 1.0.0
 
 environment:
   sdk: ^3.6.1
