@@ -2,19 +2,19 @@ enum LogoAttributions {
   android(
     name: 'Android',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   confluence(
     name: 'Confluence',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   dart(
     name: 'Dart',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   docker(
@@ -25,13 +25,13 @@ enum LogoAttributions {
   flutter(
     name: 'Flutter',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   git(
     name: 'Git',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   gitHub(
@@ -42,13 +42,13 @@ enum LogoAttributions {
   java(
     name: 'Java',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   javaScript(
     name: 'JavaScript',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   jetpackCompose(
@@ -60,7 +60,7 @@ enum LogoAttributions {
   jira(
     name: 'Jira',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   jQuery(
@@ -72,13 +72,13 @@ enum LogoAttributions {
   kotlin(
     name: 'Kotlin',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   laravel(
     name: 'Laravel',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   linkedIn(
@@ -89,7 +89,7 @@ enum LogoAttributions {
   php(
     name: 'PHP',
     owner: 'Gil Barbara',
-    link: 'https://github.com/gilbarbara/images',
+    link: 'https://github.com/gilbarbara/logos',
     license: 'license_cc0v1',
   ),
   udemy(
