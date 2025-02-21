@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/views/common/horizontal_divider.dart';
 import 'package:portfolio/views/responsive/responsive_action.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
-class ResponsiveScaffold extends StatelessWidget {
+class ResponsiveScaffold extends StatefulWidget {
   final List<ResponsiveAction> actions;
   final Widget body;
   final Widget? bottomNavigationBar;
@@ -18,34 +19,51 @@ class ResponsiveScaffold extends StatelessWidget {
   });
 
   @override
+  State<ResponsiveScaffold> createState() => _ResponsiveScaffoldState();
+}
+
+class _ResponsiveScaffoldState extends State<ResponsiveScaffold> {
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SelectionArea(
       child: ResponsiveBuilder(
         builder: (context, sizingInformation) {
           return Scaffold(
             appBar: AppBar(
-              actions: !sizingInformation.isMobile || !actions.isNotEmpty
-                  ? [...actions, const SizedBox(width: 10)]
+              actions: !sizingInformation.isMobile || !widget.actions.isNotEmpty
+                  ? [...widget.actions, const SizedBox(width: 10)]
                   : null,
               bottom: const PreferredSize(
                 preferredSize: Size.fromHeight(1),
                 child: HorizontalDivider(),
               ),
-              title: title,
+              title: widget.title,
             ),
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sizingInformation.isMobile ? 16.0 : 64.0,
+            body: WebSmoothScroll(
+              controller: _scrollController,
+              child: SingleChildScrollView(
+                controller: _scrollController,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: sizingInformation.isMobile ? 16.0 : 64.0,
+                  ),
+                  child: widget.body,
                 ),
-                child: body,
               ),
             ),
-            bottomNavigationBar: bottomNavigationBar,
-            drawer: sizingInformation.isMobile && actions.isNotEmpty
+            bottomNavigationBar: widget.bottomNavigationBar,
+            drawer: sizingInformation.isMobile && widget.actions.isNotEmpty
                 ? Drawer(
                     child: ListView(
-                      children: actions,
+                      children: widget.actions,
                     ),
                   )
                 : null,
