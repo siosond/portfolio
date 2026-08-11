@@ -1,16 +1,14 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/common/horizontal_divider.dart';
-import 'package:portfolio/views/common/label_text.dart';
 import 'package:portfolio/views/common/styled_text.dart';
 import 'package:portfolio/views/credits/credits_dialog.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class CreditsFooter extends StatelessWidget {
   const CreditsFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.sizeOf(context).width < 480;
     return Container(
       color: Theme.of(context).canvasColor,
       child: Column(
@@ -25,18 +23,10 @@ class CreditsFooter extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                ResponsiveBuilder(
-                  builder: (context, sizingInformation) {
-                    return sizingInformation.isMobile
-                        ? LabelText(
-                            context.tr('credits_trademark_disclaimer'),
-                            textAlign: TextAlign.center,
-                          )
-                        : StyledText(
-                            context.tr('credits_trademark_disclaimer'),
-                            textAlign: TextAlign.center,
-                          );
-                  },
+                StyledText(
+                  'All trademarks, logos, and brand names are the property of their respective owners.',
+                  textAlign: TextAlign.center,
+                  small: isMobile,
                 ),
                 TextButton(
                   onPressed: () => showDialog(
@@ -44,7 +34,7 @@ class CreditsFooter extends StatelessWidget {
                     builder: (context) => const CreditsDialog(),
                   ),
                   child: StyledText(
-                    context.tr('credits'),
+                    'Credits',
                     color: Theme.of(context).primaryColor,
                   ),
                 ),

@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/enums/credits/framework_attributions.dart';
 import 'package:portfolio/enums/credits/logo_attributions.dart';
@@ -17,70 +16,51 @@ class AttributionSection extends StatelessWidget {
     return StartAlignedColumn(
       spacing: 8.0,
       children: [
-        StyledText(
-          context.tr('credits_sdk_and_packages'),
-          fontWeight: FontWeight.bold,
-        ),
+        const StyledText('SDK and Packages', fontWeight: FontWeight.bold),
         StartAlignedColumn(
           children: [
-            ...FrameworkAttributions.values.map(
-              (element) {
-                return AttributionText(
-                  type: AttributionType.framework,
-                  name: element.name,
-                  owner: element.owner,
-                  link: element.link,
-                  license: context.tr(element.license),
-                );
-              },
-            ),
-            ...PackageAttributions.values.map(
-              (element) {
-                return AttributionText(
-                  type: AttributionType.framework,
-                  name: element.name,
-                  owner: element.owner,
-                  link: element.link,
-                  license: context.tr(element.license),
-                );
-              },
-            ),
-          ],
-        ),
-        StyledText(
-          context.tr('credits_attributions_app_icon'),
-          fontWeight: FontWeight.bold,
-        ),
-        StartAlignedColumn(
-          children: Projects.values.map(
-            (element) {
-              return AttributionText(
-                type: AttributionType.icon,
-                name: context.tr(element.getName()),
-                owner: context.tr(element.getDeveloper()),
-                link: element.getPlayStoreUrl(),
-              );
-            },
-          ).toList(),
-        ),
-        StyledText(
-          context.tr('credits_attributions_logo'),
-          fontWeight: FontWeight.bold,
-        ),
-        StartAlignedColumn(
-          children: LogoAttributions.values.map(
-            (element) {
+            ...FrameworkAttributions.values.map((element) {
               return AttributionText(
                 type: AttributionType.framework,
                 name: element.name,
                 owner: element.owner,
                 link: element.link,
-                license: element.license != null
-                    ? context.tr(element.license!)
-                    : null,
+                license: element.license,
               );
-            },
-          ).toList(),
+            }),
+            ...PackageAttributions.values.map((element) {
+              return AttributionText(
+                type: AttributionType.framework,
+                name: element.name,
+                owner: element.owner,
+                link: element.link,
+                license: element.license,
+              );
+            }),
+          ],
+        ),
+        const StyledText('App Icon Attributions', fontWeight: FontWeight.bold),
+        StartAlignedColumn(
+          children: Projects.values.map((element) {
+            return AttributionText(
+              type: AttributionType.icon,
+              name: element.name,
+              owner: element.developer,
+              link: element.getPlayStoreUrl(),
+            );
+          }).toList(),
+        ),
+        const StyledText('Logo Attributions', fontWeight: FontWeight.bold),
+        StartAlignedColumn(
+          children: LogoAttributions.values.map((element) {
+            return AttributionText(
+              type: AttributionType.framework,
+              name: element.name,
+              owner: element.owner,
+              link: element.link,
+              license: element.license,
+            );
+          }).toList(),
         ),
       ],
     );

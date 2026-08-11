@@ -22,9 +22,6 @@ enum Logos {
   udemy;
 
   String getAsset() {
-    return join(
-      Assets.logos.getPath(),
-      '${Casing.kebabCase(name)}.svg'
-    );
+    return join(Assets.logos.getPath(), '${Casing.kebabCase(name)}.svg');
   }
 }

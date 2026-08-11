@@ -1,10 +1,8 @@
 import 'package:path/path.dart';
 
 enum Assets {
-  downloads,
   logos,
-  projects,
-  translations;
+  projects;
 
   static const basePath = 'assets';
 

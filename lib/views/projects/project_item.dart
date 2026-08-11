@@ -27,15 +27,8 @@ class ProjectItem extends StatelessWidget {
       child: ListTile(
         contentPadding: const EdgeInsets.all(8.0),
         onTap: () => launchUrlString(storeLink),
-        leading: Image.asset(
-          assetName,
-          width: 48,
-          height: 48,
-        ),
-        title: StyledText(
-          appName,
-          fontWeight: FontWeight.bold,
-        ),
+        leading: Image.asset(assetName, width: 48, height: 48),
+        title: StyledText(appName, fontWeight: FontWeight.bold),
         subtitle: StyledText(developer),
       ),
     );

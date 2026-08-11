@@ -1,5 +1,9 @@
 enum SkillType {
-  mobile,
-  web,
-  tools;
+  mobile('Mobile'),
+  web('Web'),
+  tools('Tools');
+
+  final String label;
+
+  const SkillType(this.label);
 }

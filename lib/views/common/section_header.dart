@@ -16,9 +16,9 @@ class SectionHeader extends StatelessWidget {
       padding: padding,
       child: Text(
         title,
-        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+        style: Theme.of(
+          context,
+        ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
       ),
     );
   }

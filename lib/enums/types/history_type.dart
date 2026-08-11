@@ -1,4 +1,1 @@
-enum HistoryType {
-  education,
-  work,
-}
+enum HistoryType { education, work }

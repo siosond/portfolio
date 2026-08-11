@@ -6,11 +6,7 @@ class SkillsItems extends StatelessWidget {
   final List<Widget> items;
   final String title;
 
-  const SkillsItems({
-    super.key,
-    required this.title,
-    required this.items,
-  });
+  const SkillsItems({super.key, required this.title, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +14,7 @@ class SkillsItems extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: StyledText(
-            title,
-            fontWeight: FontWeight.bold,
-          ),
+          child: StyledText(title, fontWeight: FontWeight.bold),
         ),
         Wrap(children: items),
       ],

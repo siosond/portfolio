@@ -31,18 +31,11 @@ class CertificatesItem extends StatelessWidget {
       child: ListTile(
         onTap: urlString == null ? null : () => launchUrlString(urlString!),
         leading: assetName != null
-            ? SvgPicture.asset(
-                assetName!,
-                height: 32,
-                width: 32,
-              )
+            ? SvgPicture.asset(assetName!, height: 32, width: 32)
             : null,
         title: StartAlignedColumn(
           children: [
-            StyledText(
-              title,
-              fontWeight: FontWeight.bold,
-            ),
+            StyledText(title, fontWeight: FontWeight.bold),
             Text(issuer),
             Text(issueDate),
           ],

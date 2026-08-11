@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/urls.dart';
 import 'package:portfolio/enums/logos.dart';
@@ -14,11 +13,8 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return StartAlignedColumn(
       children: [
-        Text(
-          context.tr('about_name'),
-          style: Theme.of(context).textTheme.displaySmall,
-        ),
-        StyledText(context.tr('about_bio')),
+        Text('Daniel Sioson', style: Theme.of(context).textTheme.displaySmall),
+        const StyledText('Mobile and Web Developer'),
         Wrap(
           children: [
             const AboutIconButton(
@@ -26,11 +22,11 @@ class AboutSection extends StatelessWidget {
               urlString: Urls.email,
             ),
             AboutIconButton(
-              icon: Logos.linkedin.getAsset(),
+              iconAsset: Logos.linkedin.getAsset(),
               urlString: Urls.linkedIn,
             ),
             AboutIconButton(
-              icon: Logos.github.getAsset(),
+              iconAsset: Logos.github.getAsset(),
               urlString: Urls.gitHub,
             ),
           ],
@@ -38,7 +34,7 @@ class AboutSection extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(vertical: 8.0),
           child: ResumeButton(),
-        )
+        ),
       ],
     );
   }

@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class ResponsiveAction extends StatelessWidget {
   final VoidCallback? onPressed;
   final Widget child;
 
-  const ResponsiveAction({
-    super.key,
-    required this.child,
-    this.onPressed,
-  });
+  const ResponsiveAction({super.key, required this.child, this.onPressed});
 
   void _handleTap(BuildContext context) {
     onPressed?.call();
@@ -20,20 +15,12 @@ class ResponsiveAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        if (sizingInformation.isMobile) {
-          return ListTile(
-            onTap: onPressed != null ? () => _handleTap(context) : null,
-            title: child,
-          );
-        } else {
-          return MaterialButton(
-            onPressed: onPressed,
-            child: child,
-          );
-        }
-      },
-    );
+    if (MediaQuery.sizeOf(context).width < 480) {
+      return ListTile(
+        onTap: onPressed != null ? () => _handleTap(context) : null,
+        title: child,
+      );
+    }
+    return MaterialButton(onPressed: onPressed, child: child);
   }
 }

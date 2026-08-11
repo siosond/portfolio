@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/enums/types/attribution_type.dart';
@@ -48,25 +47,13 @@ class _AttributionTextState extends State<AttributionText> {
           child: RichText(
             text: TextSpan(
               children: [
+                TextSpan(text: widget.name),
                 TextSpan(
-                  text: widget.name,
+                  text: widget.type == AttributionType.icon
+                      ? ' icon by '
+                      : ' by ',
                 ),
-                if (widget.type == AttributionType.framework)
-                  TextSpan(
-                    text: ' ${context.tr('credits_by')} ',
-                  ),
-                if (widget.type == AttributionType.icon)
-                  TextSpan(
-                    text: ' ${context.tr('credits_by_icon')} ',
-                  ),
-                if (widget.type == AttributionType.package)
-                  TextSpan(
-                    text: ' ${context.tr('credits_by_package')} ',
-                  ),
-                if (widget.link == null)
-                  TextSpan(
-                    text: widget.owner,
-                  ),
+                if (widget.link == null) TextSpan(text: widget.owner),
                 if (widget.link != null)
                   TextSpan(
                     text: widget.owner,
@@ -75,9 +62,7 @@ class _AttributionTextState extends State<AttributionText> {
                       ..onTap = () => launchUrlString(widget.link!),
                   ),
                 if (widget.license != null)
-                  TextSpan(
-                    text: ' ${context.tr('credits_licensed_under')} ',
-                  ),
+                  const TextSpan(text: ' licensed under '),
                 if (widget.license != null)
                   TextSpan(
                     text: widget.license,

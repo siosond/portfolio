@@ -1,5 +1,3 @@
-import 'package:dart_casing/dart_casing.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/enums/logos.dart';
 import 'package:portfolio/enums/skills.dart';
@@ -14,26 +12,19 @@ class SkillsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StartAlignedColumn(
-      children: SkillType.values.map(
-        (type) {
-          return SkillsItems(
-            title: context.tr(type.name),
-            items: Skills.values.where(
-              (skill) {
-                return skill.type == type;
-              },
-            ).map(
-              (skill) {
-                return SkillsItem(
+      children: [
+        for (final type in SkillType.values)
+          SkillsItems(
+            title: type.label,
+            items: [
+              for (final skill in Skills.values.where((s) => s.type == type))
+                SkillsItem(
                   assetPath: Logos.values.byName(skill.name).getAsset(),
-                  skillName:
-                      context.tr('skills_${Casing.snakeCase(skill.name)}'),
-                );
-              },
-            ).toList(),
-          );
-        },
-      ).toList(),
+                  skillName: skill.label,
+                ),
+            ],
+          ),
+      ],
     );
   }
 }

@@ -10,27 +10,25 @@ class HistoryItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StartAlignedColumn(
-      children: items.map(
-        (element) {
-          return Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.circle, size: 8.0),
+      children: items.map((element) {
+        return Row(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(Icons.circle, size: 8.0),
+            ),
+            Expanded(
+              child: StyledText(
+                element,
+                softWrap: true,
+                overflow: TextOverflow.visible,
               ),
-              Expanded(
-                child: StyledText(
-                  element,
-                  softWrap: true,
-                  overflow: TextOverflow.visible,
-                ),
-              ),
-            ],
-          );
-        },
-      ).toList(),
+            ),
+          ],
+        );
+      }).toList(),
     );
   }
 }

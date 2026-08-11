@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/enums/sections.dart';
 import 'package:portfolio/views/about/about_section.dart';
@@ -29,15 +28,13 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveScaffold(
-      title: Text(context.tr('portfolio')),
-      actions: Sections.values.map(
-        (section) {
-          return ResponsiveAction(
-            child: StyledText(context.tr('actions_${section.name}')),
-            onPressed: () => _scrollToWidget(section.globalKey),
-          );
-        },
-      ).toList(),
+      title: const Text('Portfolio'),
+      actions: Sections.values.map((section) {
+        return ResponsiveAction(
+          child: StyledText(section.label),
+          onPressed: () => _scrollToWidget(section.globalKey),
+        );
+      }).toList(),
       body: StartAlignedColumn(
         children: [
           Padding(
@@ -45,23 +42,14 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 96.0),
             child: const AboutSection(),
           ),
-          SectionHeader(
-            context.tr('my_skills'),
-            key: Sections.skills.globalKey,
-          ),
+          SectionHeader('My Skills', key: Sections.skills.globalKey),
           const SkillsSection(),
-          SectionHeader(
-            context.tr('actions_history'),
-            key: Sections.history.globalKey,
-          ),
+          SectionHeader('History', key: Sections.history.globalKey),
           const HistorySection(),
-          SectionHeader(
-            context.tr('my_projects'),
-            key: Sections.projects.globalKey,
-          ),
+          SectionHeader('My Projects', key: Sections.projects.globalKey),
           const ProjectsSection(),
           SectionHeader(
-            context.tr('my_certificates'),
+            'My Certificates',
             key: Sections.certificates.globalKey,
           ),
           const CertificatesSection(),

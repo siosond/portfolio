@@ -1,5 +1,1 @@
-enum AttributionType {
-  framework,
-  icon,
-  package,
-}
+enum AttributionType { framework, icon }

@@ -3,13 +3,13 @@ enum FrameworkAttributions {
     name: 'Flutter',
     owner: 'Google',
     link: 'https://github.com/flutter/flutter',
-    license: 'license_bsd3',
+    license: 'BSD 3-Clause "New" or "Revised" License',
   ),
   dart(
     name: 'Dart',
     owner: 'Google',
     link: 'https://github.com/dart-lang/sdk',
-    license: 'license_bsd3',
+    license: 'BSD 3-Clause "New" or "Revised" License',
   );
 
   final String name;

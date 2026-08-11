@@ -10,23 +10,17 @@ class CertificatesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StartAlignedColumn(
-        children: Certificates.values.map(
-      (element) {
-        final position = element.index == 0
-            ? PlacementType.start
-            : element.index == Certificates.values.length - 1
-                ? PlacementType.end
-                : PlacementType.center;
-
-        return CertificatesItem(
-          assetName: element.getPlatformLogo(),
-          issueDate: element.completionDate,
-          issuer: element.platformName,
-          positions: position,
-          title: element.courseTitle,
-          urlString: element.getVerificationUrl(),
-        );
-      },
-    ).toList());
+      children: [
+        for (final (index, element) in Certificates.values.indexed)
+          CertificatesItem(
+            assetName: element.getPlatformLogo(),
+            issueDate: element.completionDate,
+            issuer: 'Udemy',
+            positions: placementAt(index, Certificates.values.length),
+            title: element.courseTitle,
+            urlString: element.getVerificationUrl(),
+          ),
+      ],
+    );
   }
 }

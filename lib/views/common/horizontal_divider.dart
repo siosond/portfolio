@@ -6,9 +6,6 @@ class HorizontalDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Divider(
-      color: Colours.chineseWhite,
-      height: 0,
-    );
+    return const Divider(color: Colours.chineseWhite, height: 0);
   }
 }

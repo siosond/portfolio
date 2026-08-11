@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/enums/projects.dart';
 import 'package:portfolio/enums/types/placement_type.dart';
@@ -11,23 +10,16 @@ class ProjectsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StartAlignedColumn(
-      children: Projects.values.map(
-        (element) {
-          final position = element.index == 0
-              ? PlacementType.start
-              : element.index == Projects.values.length - 1
-                  ? PlacementType.end
-                  : PlacementType.center;
-
-          return ProjectItem(
-            appName: context.tr(element.getName()),
+      children: [
+        for (final (index, element) in Projects.values.indexed)
+          ProjectItem(
+            appName: element.name,
             assetName: element.getAsset(),
-            developer: context.tr(element.getDeveloper()),
-            positions: position,
+            developer: element.developer,
+            positions: placementAt(index, Projects.values.length),
             storeLink: element.getPlayStoreUrl(),
-          );
-        },
-      ).toList(),
+          ),
+      ],
     );
   }
 }

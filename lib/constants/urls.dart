@@ -6,7 +6,6 @@ class Urls {
   static const String linkedIn = 'https://www.linkedin.com/in/siosond/';
   static const String logosLicenseUrl =
       'https://raw.githubusercontent.com/gilbarbara/logos/refs/heads/main/LICENSE.txt';
-  static const String playStoreApp =
-      'https://play.google.com/store/apps/details?id=';
+  static const String resume = 'assets/downloads/resume.pdf';
   static const String udemyCertificate = 'https://www.udemy.com/certificate';
 }

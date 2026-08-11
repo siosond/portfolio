@@ -7,6 +7,7 @@ class StyledText extends StatelessWidget {
   final TextOverflow? overflow;
   final bool? softWrap;
   final TextAlign? textAlign;
+  final bool small;
 
   const StyledText(
     this.data, {
@@ -16,19 +17,26 @@ class StyledText extends StatelessWidget {
     this.overflow,
     this.softWrap,
     this.textAlign,
+    this.small = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      data,
-      overflow: overflow,
-      softWrap: softWrap,
-      textAlign: textAlign,
-      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            color: color,
-            fontWeight: fontWeight,
-          ),
+    final textTheme = Theme.of(context).textTheme;
+    return Padding(
+      padding: small
+          ? const EdgeInsets.symmetric(vertical: 4.0)
+          : EdgeInsets.zero,
+      child: Text(
+        data,
+        overflow: overflow,
+        softWrap: softWrap,
+        textAlign: textAlign,
+        style: (small ? textTheme.bodySmall : textTheme.bodyLarge)?.copyWith(
+          color: color,
+          fontWeight: fontWeight,
+        ),
+      ),
     );
   }
 }

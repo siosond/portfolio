@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/license_utils.dart';
 import 'package:portfolio/views/common/styled_text.dart';
@@ -11,27 +10,22 @@ class CreditsDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       scrollable: true,
-      title: Text(context.tr('credits')),
+      title: const Text('Credits'),
       content: Container(
         constraints: const BoxConstraints(maxWidth: 580),
-        child: const SelectionArea(
-          child: AttributionSection(),
-        ),
+        child: const SelectionArea(child: AttributionSection()),
       ),
       actions: [
         TextButton(
           onPressed: () => LicenseUtils.openLicenseScreen(context),
           child: StyledText(
-            context.tr('credits_view_licenses'),
+            'View Licenses',
             color: Theme.of(context).primaryColor,
           ),
         ),
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: StyledText(
-            context.tr('close'),
-            color: Theme.of(context).primaryColor,
-          ),
+          child: StyledText('Close', color: Theme.of(context).primaryColor),
         ),
       ],
     );

@@ -32,10 +32,7 @@ class HistoryItem extends StatelessWidget {
         subtitle: subtitle,
         title: title,
       ),
-      node: HistoryNode(
-        icon: icon,
-        position: position,
-      ),
+      node: HistoryNode(icon: icon, position: position),
     );
   }
 }
